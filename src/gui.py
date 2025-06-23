@@ -332,22 +332,9 @@ class QuadraticFormulaApp:
         self.discriminant_section.pack(fill=tk.X, pady=5, padx=5)
         self.discriminant_label.config(text=str(self.discriminant_value), fg=self.info_color)
 
-
-    # Este método se llama desde el botón "Mostrar Solución"
-    # Asegúrate de que este se llama para la lógica de los botones si quieres que los botones
-    # individuales muestren sus secciones.
     def display_correct_solution_and_procedure(self):
-        """
-        Este método es una versión para el botón "Mostrar Solución" que ahora solo llama
-        a display_correct_solution(). Si se quiere que este botón muestre AMBOS,
-        entonces se debería modificar su lógica y llamar a pack() para ambos frames.
-        Por el diseño de la imagen, cada botón es individual.
-        """
         if self.a is None:
             messagebox.showwarning("Sin Problema", "Por favor, genera un problema primero.")
             return
-        
-        # Según la imagen, el botón "Mostrar Solución" solo muestra la sección de Solución
+
         self.display_correct_solution()
-        # Si quisieras que mostrara también el procedimiento, descomentarías:
-        self.display_procedure_only()
